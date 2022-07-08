@@ -16,7 +16,7 @@
     "cypress": "^10.3.0"
   },
   "cypress-cucumber-preprocessor": {
-    "stepDefinitions": "cypress/e2e/login/login.js"
+    "stepDefinitions": "cypress/e2e/**/*.js"
   },
   "dependencies": {
     "@cypress/webpack-preprocessor": "^5.12.0"

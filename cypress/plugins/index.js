@@ -9,7 +9,7 @@ module.exports = (on, config) => {
     // `config` is the resolved Cypress config
 }
 
-//For Cucumber Integration
+// For Cucumber Integration
 const createEsbuildPlugin =
     require('@badeball/cypress-cucumber-preprocessor/esbuild').createEsbuildPlugin
 const createBundler = require('@bahmutov/cypress-esbuild-preprocessor')
