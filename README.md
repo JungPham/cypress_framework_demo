@@ -10,6 +10,9 @@ TBD
 `npx cypress open`
 
 3/ How to add new tests
+
 Step 1: Add new feature file into `features` folder
+
 Step 2: Add some steps handle with step in feature file
+
 Step 3: Add new pages accordingly
