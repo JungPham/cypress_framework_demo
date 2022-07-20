@@ -1,7 +1,7 @@
 Feature: Login function
     As a user, I want to login app successfully
 
-    Background: Login
+    Background: 
         Given User is on login page
 
     Scenario: Verify if user is logged in successfully
