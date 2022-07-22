@@ -6,10 +6,9 @@ pipeline {
    stages {
       stage('Test') {
          steps {
-               sh 'npm install cypress --save-dev'
-               sh 'apt-get install -y xorg-x11-server-Xvfb gtk2-devel gtk3-devel libnotify-devel GConf2 nss libXScrnSaver alsa-lib'
+               bat 'npm install cypress --save-dev'
                catchError {
-                   sh 'npx cypress run'
+                   bat 'npx cypress run'
                }       
          }
       }
