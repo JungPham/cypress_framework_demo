@@ -10,7 +10,7 @@ pipeline {
                bat 'npm i -D @shelex/cypress-allure-plugin'
                bat 'npm install --save-dev mocha-allure-reporter allure-commandline'
                catchError {
-                   bat 'npx cypress run --env allure=true --reporter mocha-allure-reporter'
+                   bat 'npx cypress run --env allure=true --reporter mocha-allure-reporter allureAttachRequests=true'
                }       
          }
       }
