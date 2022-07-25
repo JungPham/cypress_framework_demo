@@ -8,7 +8,7 @@ pipeline {
          steps {
                bat 'npm install cypress --save-dev'
                bat 'npm i -D @shelex/cypress-allure-plugin'
-               // bat 'npm install --save-dev mocha-allure-reporter allure-commandline'
+               bat 'npm install --save-dev mocha-allure-reporter allure-commandline'
                catchError {
                    bat 'npx cypress run --env allure=true'
                }       
