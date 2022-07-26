@@ -1,5 +1,5 @@
 import { LoginPage } from "../../pages/login-page";
-import { Given, When, Then, And } from "@badeball/cypress-cucumber-preprocessor"
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor"
 import { CartPage } from "../../pages/cart-page";
 
 
@@ -10,13 +10,8 @@ Given('User is on login page', () => {
     cy.visit(Cypress.env('baseUrl'));
 })
 
-When('User enters username as {string} and password as {string}', (username, password) => {
-    loginPage.getUsernameTextBox().type(username);
-    loginPage.getPasswordTextBox().type(password);
-})
-
-And('User clicks on login button', () => {
-    loginPage.getLoginButton().click();
+When('User logins with username as {string} and password as {string}', (username, password) => {
+    loginPage.login(username, password);
 })
 
 Then('{string} page is displayed', (page_url) => {

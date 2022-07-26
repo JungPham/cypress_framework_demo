@@ -3,8 +3,7 @@ Feature: Checkout function
 
     Background: 
         Given User is on login page
-        And User enters username as 'standard_user' and password as 'secret_sauce'
-        And User clicks on login button
+        And User logins with username as 'standard_user' and password as 'secret_sauce'
 
     Scenario: Verify if user can add and remove a item in the cart
         Then '6' products should have an Add To Cart button
