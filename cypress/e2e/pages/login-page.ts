@@ -14,4 +14,14 @@ export class LoginPage {
     getErrorMessage() {
         return cy.get('[data-test=error]')
     }
+
+    login(username, password) {
+        if (username != null){
+            this.getUsernameTextBox().type(username);
+        }
+        if (password != null){
+        this.getPasswordTextBox().type(password);
+        }
+        this.getLoginButton().click();
+    }
 }
