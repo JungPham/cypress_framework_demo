@@ -3,8 +3,7 @@ Feature: Checkout function
 
     Background: 
         Given User is on login page
-        And User enters username as 'standard_user' and password as 'secret_sauce'
-        And User clicks on login button
+        And User logins with username as 'standard_user' and password as 'secret_sauce'
 
     Scenario: Verify that the checkout one item is successfully completed
         When User add a 'Sauce Labs Backpack' item to the cart
