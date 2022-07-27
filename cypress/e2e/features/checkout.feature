@@ -6,56 +6,59 @@ Feature: Checkout function
         And User logins with username as 'standard_user' and password as 'secret_sauce'
 
     Scenario: Verify that the checkout one item is successfully completed
-        When User add a 'Sauce Labs Backpack' item to the cart
-        And User open Cart page
-        And User click on Checkout button
-        And User input checkout information 'Dung' as 'First Name'
-        And User input checkout information 'Pham' as 'Last Name'
-        And User input checkout information '70000' as 'Zip Code'
-        And User click on Continue button
+        When User add items to the cart
+        | items                     |
+        | Sauce Labs Backpack       |
+        And User go to cart and checkout
+        | first_name   | last_name  | zip_code  |
+        | Dung         | Pham       | 70000     |
+        And User continue checkout
         Then '1' item in the cart should be shown in checkout step two
-        When User click on Finish button
+        When User finish the checkout
         Then 'THANK YOU FOR YOUR ORDER' message should be shown when the checkout is completed
 
     Scenario: Verify that the checkout many items is successfully completed
-        When User add a 'Sauce Labs Backpack' item to the cart
-        When User add a 'Sauce Labs Bike Light' item to the cart
-        And User open Cart page
-        And User click on Checkout button
-        And User input checkout information 'Dung' as 'First Name'
-        And User input checkout information 'Pham' as 'Last Name'
-        And User input checkout information '70000' as 'Zip Code'
-        And User click on Continue button
+        When User add items to the cart
+        | items                     |
+        | Sauce Labs Backpack       |
+        | Sauce Labs Bike Light     |
+        And User go to cart and checkout
+        | first_name   | last_name  | zip_code  |
+        | Dung         | Pham       | 70000     |
+        And User continue checkout
         Then '2' item in the cart should be shown in checkout step two
-        When User click on Finish button
+        When User finish the checkout
         Then 'THANK YOU FOR YOUR ORDER' message should be shown when the checkout is completed
+        
 
     Scenario: Verify that the checkout is unsuccessfully when missing checkout information
-        When User add a 'Sauce Labs Backpack' item to the cart
-        And User open Cart page
-        And User click on Checkout button
-        And User click on Continue button
+        When User add items to the cart
+        | items                     |
+        | Sauce Labs Backpack       |
+        And User go to cart and checkout
+        And User continue checkout
         Then 'Error: First Name is required' error message should be shown
         And User input checkout information 'Dung' as 'First Name'
-        And User click on Continue button
+        And User continue checkout
         Then 'Error: Last Name is required' error message should be shown
         When User input checkout information 'Pham' as 'Last Name'
-        And User click on Continue button
+        And User continue checkout
         Then 'Error: Postal Code is required' error message should be shown
 
     Scenario: Verify that the checkout is unsuccessfully when user cancel checkout on "checkout step one" page
-        When User add a 'Sauce Labs Backpack' item to the cart
-        And User open Cart page
-        And User click on Checkout button
-        And User click on Cancel button
+        When User add items to the cart
+        | items                     |
+        | Sauce Labs Backpack       |
+        And User go to cart and checkout
+        And User cancel the checkout
         Then 'cart.html' page is displayed
 
     Scenario: Verify that the checkout is unsuccessfully when user cancel checkout on "checkout step two" page
-        When User add a 'Sauce Labs Backpack' item to the cart
-        And User open Cart page
-        And User click on Checkout button
-        And User input checkout information 'Dung' as 'First Name'
-        And User input checkout information 'Pham' as 'Last Name'
-        And User input checkout information '70000' as 'Zip Code'
-        And User click on Cancel button
+        When User add items to the cart
+        | items                     |
+        | Sauce Labs Backpack       |
+        And User go to cart and checkout
+        | first_name   | last_name  | zip_code  |
+        | Dung         | Pham       | 70000     |
+        And User cancel the checkout
         Then 'cart.html' page is displayed
