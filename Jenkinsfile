@@ -11,9 +11,7 @@ pipeline {
                bat 'npm install --save-dev mocha-allure-reporter allure-commandline'
                catchError {
                   bat 'npx cypress run --env allure=true --reporter=mocha-allure-reporter'
-                  bat 'cd allure-results'
-                  bat 'del *.xml'
-                  bat 'cd ..'
+                  bat 'del ./allure-results/*.xml'
                }       
          }
       }
