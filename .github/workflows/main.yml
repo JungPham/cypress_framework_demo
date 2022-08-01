@@ -14,4 +14,4 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           build: npm install
-          start: npx cypress run --headed
+          start: npx cypress run --headed --record --key 730f5e89-2807-4f18-979f-202508fb31e1 --parallel
