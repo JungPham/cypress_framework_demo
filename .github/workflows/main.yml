@@ -13,5 +13,9 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          build: npm install
-          start: npx cypress run --record --key 730f5e89-2807-4f18-979f-202508fb31e1 --parallel
+          build: 
+              npm install cypress --save-dev
+              npm i -D @shelex/cypress-allure-plugin
+              npm install --save-dev mocha-allure-reporter allure-commandline
+          start: 
+              npx cypress run --headed --env allure=true --reporter=mocha-allure-reporter
