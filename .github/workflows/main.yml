@@ -18,4 +18,4 @@ jobs:
               npm i -D @shelex/cypress-allure-plugin
               npm install --save-dev mocha-allure-reporter allure-commandline
           start: 
-              npx cypress run -headed --env allure=true --reporter=mocha-allure-reporter
+              npx cypress run --headed --env allure=true --reporter=mocha-allure-reporter
