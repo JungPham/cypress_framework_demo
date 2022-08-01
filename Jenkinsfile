@@ -12,7 +12,7 @@ pipeline {
                catchError {
                   bat 'npx cypress run --env allure=true --reporter=mocha-allure-reporter'
                   bat 'cd allure-results'
-                  bat 'rm -r *.xml'
+                  bat 'del *.xml'
                   bat 'cd ..'
                }       
          }
