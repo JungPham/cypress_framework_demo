@@ -4,7 +4,9 @@ Cypress framework demo project using Typescript and Cucumber
 
 ## Structure framework
 
-TBD
+- features: includes some automated features of application
+- pages: defines page object model
+- steps: step to handle steps definition in feature files
 
 ## How to add new tests
 
