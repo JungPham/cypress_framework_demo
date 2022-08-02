@@ -4,9 +4,9 @@ Cypress framework demo project using Typescript and Cucumber
 
 ## Structure framework
 
-- features: includes some automated features of application
-- pages: defines page object model
-- steps: step to handle steps definition in feature files
+- `features`: includes some automated features of application
+- `pages`: defines page object model
+- `steps`: step to handle steps definition in feature files
 
 ## How to add new tests
 
@@ -46,8 +46,8 @@ Execute command line:
 
 ## Run and save result on dashboard
 
-npx cypress run --record --key 730f5e89-2807-4f18-979f-202508fb31e1 --parallel
+npx cypress run --record --key 730f5e89-2807-4f18-979f-202508fb31e1
 
 ## Issue
 
-1.  - The report generator have issue about dupicate test cases on Allure report.
+- The report generator have issue about dupicate test cases on Allure report.
