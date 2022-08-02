@@ -1,4 +1,4 @@
-Feature: Checkout function
+Feature: Add remove items function
     As a user, I want to add and remove items in the cart
 
     Background: 
