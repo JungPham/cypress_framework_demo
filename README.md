@@ -51,3 +51,19 @@ npx cypress run --record --key 730f5e89-2807-4f18-979f-202508fb31e1
 ## Issue
 
 - The report generator have issue about dupicate test cases on Allure report.
+
+## How to configure to run on Jenkins
+
+### Preconditions:
+- Jenkins is installed
+
+### Steps:
+1/ On Jenkins: Clicks on `New Item`
+2/ On Jenkins: Enter job name and select `Pipeline` job type > OK
+3/ On Jenkins: On Pipeline section, select `Pipeline script from SCM` and SCM is `Git`
+4/ Generate token from Github: `Settings` > `Developer settings` > `Personal access tokens` > Generate new token for using cypress 
+5/ On Jenkins: Add Credentials with kind `Username and password`, Username and Password is value of token which is generated from step 4
+6/ On Jenkins: Select branch to build > Apply and Save job configuration
+7/ Go to Dashboard > `Manage Jenkins` > `Manage Plugins` > install `Allure Jenkins Plugin` and `NodeJS plugin`
+8/ Go to Dashboard > `Global Tool Configuration` > Add NodeJS with name `node` and Add Allure Commandline with name `allure` > Save and Apply
+9/ Go to cypress job and Build now
